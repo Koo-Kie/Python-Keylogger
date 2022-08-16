@@ -5,4 +5,4 @@ Record keylogs and sends them to a Discord channel.
 Don't be a script kiddie
 
 Required:
-pynput module
+1) pynput module
