@@ -1,2 +1,5 @@
 # Python-Keylogger
-Send keylogs to a Discord channel.
+Record keylogs and sends them to a Discord channel.
+
+# Educational purposes only! 
+Don't be a script kiddie
